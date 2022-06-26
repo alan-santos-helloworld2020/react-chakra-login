@@ -9,14 +9,15 @@ const Private=({children})=>{
     useEffect(()=>{
 
         setAuth(localStorage.getItem("auth"))
+        console.log(auth)
 
-    },[]);
+    });
 
-    if(!auth){
-        return navigate("/")
+    if(!JSON.parse(auth)){
+        navigate("/")
+    }else{
+       return children;
     }
-
-    return children;
 
 }
 
