@@ -28,6 +28,7 @@ const Cadastro = () => {
     validate,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
+      localStorage.setItem("auth",true);
       navigate("/home");
     },
   });
